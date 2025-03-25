@@ -1,7 +1,14 @@
+
+
+
+
 const Page = () => {
     return (
-        <div>
-            dashboard
+        <div className="w-full h-[100vh] flex justify-center items-center">
+                
+            <div>
+
+            </div>
         </div>
       );
 }
