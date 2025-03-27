@@ -1,4 +1,9 @@
-const Header = ({ user, onLogout }: { user: string; onLogout: () => void }) => (
+"use client"
+
+const Header = (
+    { user, onLogout }: 
+    { user: string; onLogout: () => void }
+) => (
     <div className="flex justify-between items-center mb-8 w-full">
       <h1 className="text-4xl font-bold">Dashboard</h1>
       <div className="flex items-center gap-4">

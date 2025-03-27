@@ -1,8 +1,6 @@
 'use client'
 import React, { useState } from 'react';
 import { FaGoogle } from 'react-icons/fa';
-import {useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth';
-import { auth } from '@/app/firebase/config';
 import { useRouter } from 'next/navigation';
 
 const Access = () => {
@@ -15,8 +13,6 @@ const Access = () => {
 
     const [isLogin, setIsLogin] = useState(true);
 
-    const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
-    const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
 
     const states = {
         signIn: {
@@ -35,32 +31,10 @@ const Access = () => {
 
     const handleSignIn = async () => {
         console.log('Sign-in');
-        try{
-            const res = signInWithEmailAndPassword(email, password);
-            console.log(res);
-            setEmail('');
-            setPassword('');
-            console.log('Sign-in Successful');
-            router.push('/dashboard');
-        }
-        catch(err){
-            console.log(err);
-        }
+        
     }
 
     const handleSignUp = async () => {
-        try{
-            const res = await createUserWithEmailAndPassword(email, password);
-            console.log(res);
-            setEmail('');
-            setPassword('');
-            setConfirmPassword('');
-            console.log('Sign-up Successful');
-        }
-        catch(err){
-            console.log(err);
-        }
-
         
     }
 
