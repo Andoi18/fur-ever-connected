@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation'
 
 import { createClient } from '@/app/utils/supabase/server'
 
-export async function login(formData: FormData) {
+export async function emailSignIn(formData: FormData) {
   const supabase = await createClient()
 
   // type-casting here for convenience
@@ -22,7 +22,7 @@ export async function login(formData: FormData) {
   }
 
   revalidatePath('/', 'layout')
-  redirect('/')
+  redirect('/dashboard')
 }
 
 export async function signup(formData: FormData) {

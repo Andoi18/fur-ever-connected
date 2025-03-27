@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 
-//import { emailSignIn } from '../actions';
+import { emailSignIn } from '../actions';
 import OAuthButtons from './oath-buttons';
 
 
@@ -26,13 +26,15 @@ const SignInForm = () => {
             <div className='pt-6 flex justify-center items-center'>
                 <button 
                     className=" px-8 py-2 rounded-full bg-gradient-to-b from-blue-500 to-blue-600 hover:to-blue-700 transition ease-in text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl duration-200"
-                    //formAction={emailSignIn}
+                    formAction={emailSignIn}
                 >
                     Sign In
                 </button>
             </div>
         )
     };
+
+    
     
 
     return ( 

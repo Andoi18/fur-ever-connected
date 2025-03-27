@@ -18,8 +18,6 @@ const SignUpForm = () => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
 
-    const [selected, setSelected] = useState("");
-
     const [error, setError] = useState('');
     const [isPending, setIsPending] = useState(false);
 
@@ -27,7 +25,7 @@ const SignUpForm = () => {
     const handleSubmit = async (event : any) => {
         event.preventDefault();
         if(password !== confirmPassword){
-            return setError('Passwords do not match');
+            return setError('Entered password does not match');
         }
         setError('') 
         signup(new FormData(document.getElementById('signup_form') as HTMLFormElement));
